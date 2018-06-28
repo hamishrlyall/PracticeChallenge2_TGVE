@@ -1,0 +1,99 @@
+﻿@model TGVE.ViewModels.TourEventsIndexData
+
+@{
+    ViewBag.Title = "TourEvents";
+}
+
+<h2>TourEvents</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>EventID</th>
+        <th>EventDate</th>
+        <th>Fee</th>
+        <th>TourName</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.TourEvents)
+    {
+        string selectedRow = "";
+        if (item.EventID == ViewBag.EventID)
+        {
+            selectedRow = "success";
+        }
+        <tr class="@selectedRow">
+            <td>
+                @Html.DisplayFor(modelItem =>item.EventID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tour.TourName)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "Index", new { id = item.EventID })|
+                @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (Model.Bookings != null)
+{
+    <h3>Bookings made fore Selected Event</h3>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>BookingID</th>
+            <th>ClientID</th>
+            <th>TourName</th>
+            <th>EventID</th>
+            <th>EventDate</th>
+            <th>Payment</th>
+            <th>DateBooked</th>
+        </tr>
+
+        @foreach (var item in Model.Bookings)
+        {
+            string selectedRow = "";
+            if (item.BookingID == ViewBag.BookingID)
+            {
+                selectedRow = "success";
+            }
+            <tr class="@selectedRow">
+                <td>
+                    @Html.ActionLink("Select", "Index", new { bookingID = item.BookingID })
+                </td>
+                <td>
+                    @item.BookingID
+                </td>
+                <td>
+                    @item.Client.ClientID
+                </td>
+                <td>
+                    @item.Tour.TourName
+                </td>
+                <td>
+                    @item.TourEvent.EventID
+                </td>
+                <td>
+                    @item.EventDate
+                </td>
+                <td>
+                    @item.DateBooked
+                </td>
+            </tr>
+        }
+
+    </table>
+}

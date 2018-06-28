@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="921234f0acad42bf97f36d59b9f3fc30" Name="Diagram1">
+        <EntityTypeShape EntityType="PracticeChallenge2_TGVEModel.Booking" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PracticeChallenge2_TGVEModel.Client" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="PracticeChallenge2_TGVEModel.TourEvent" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PracticeChallenge2_TGVEModel.Tour" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="PracticeChallenge2_TGVEModel.FK_Bookings_ClientID" ManuallyRouted="false" />
+        <AssociationConnector Association="PracticeChallenge2_TGVEModel.FK_Bookings_EventID" ManuallyRouted="false" />
+        <AssociationConnector Association="PracticeChallenge2_TGVEModel.FK_Bookings_TourName" ManuallyRouted="false" />
+        <AssociationConnector Association="PracticeChallenge2_TGVEModel.FK_TourEvents_TourName" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

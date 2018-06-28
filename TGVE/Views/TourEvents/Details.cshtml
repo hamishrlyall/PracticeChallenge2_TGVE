@@ -1,0 +1,34 @@
+﻿@model TGVE.Models.TourEvent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TourEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tour.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tour.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventDate }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
